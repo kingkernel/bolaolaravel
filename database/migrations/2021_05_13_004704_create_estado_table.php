@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class TableUsersColumns extends Migration
+class CreateEstadoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class TableUsersColumns extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->boolean("active")->default(false)->after("password");
+        Schema::create('estados', function (Blueprint $table) {
+            $table->string('sigla', 2)->primary();
+            $table->timestamps();
         });
     }
 
@@ -25,8 +26,6 @@ class TableUsersColumns extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-
-        });
+        Schema::dropIfExists('estados');
     }
 }

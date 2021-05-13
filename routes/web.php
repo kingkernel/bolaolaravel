@@ -14,11 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('bolao.model');
+    return view('bolao.indexoff');
 });
-Route::get('/user/cadastro/', function () {
+Route::get('cadastro/', function () {
     return view('bolao.cadastro');
 });
+Route::post('newuser/',[App\Http\Controllers\usuariosController::class, 'newuser']);
 
 Auth::routes();
 
