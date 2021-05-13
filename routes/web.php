@@ -21,6 +21,11 @@ Route::get('cadastro/', function () {
 });
 Route::post('newuser/',[App\Http\Controllers\usuariosController::class, 'newuser']);
 
+Route::get('ajaxestados/',[App\Http\Controllers\freeajaxController::class, 'estados']);
+Route::get('ajaxcidades/{sigla}', function($sigla){
+    \App\Http\Controllers\freeajaxController::cidades($sigla);
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

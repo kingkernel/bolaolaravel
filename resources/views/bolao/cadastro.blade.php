@@ -63,7 +63,7 @@ $(document).ready(function(){
 
     $("#user-estado").change(function (){
         let estado = $("#user-estado").val();
-        $("#user-cidade").load('http://'+document.location.hostname+'/ajax/cidades/'+ estado, function (data){ 
+        $("#user-cidade").load('http://'+document.location.hostname+'/ajaxestados/'+ estado, function (data){ 
             $("#user-cidade").html(data); 
         })
     })
