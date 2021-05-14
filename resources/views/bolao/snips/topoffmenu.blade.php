@@ -10,10 +10,10 @@
       <div class="collapse navbar-collapse" id="navbarsExample07">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="cadastro/">Quero participar</a>
+            <a class="nav-link active" aria-current="page" href="regras/">Como Funciona</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link active" aria-current="page" href="cadastro/">Quero participar</a>
           </li>
           <li class="nav-item">
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
@@ -32,12 +32,12 @@
         </form>
         
         <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-  <button type="button" class="btn btn-danger">Danger</button>
+  <button type="button" class="btn btn-danger">Usuários</button>
   <div class="btn-group" role="group">
     <button id="btnGroupDrop4" type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
     <div class="dropdown-menu" aria-labelledby="btnGroupDrop4">
-      <a class="dropdown-item" href="#">Dropdown link</a>
-      <a class="dropdown-item" href="#">Dropdown link</a>
+      <a class="dropdown-item" href="#">Login</a>
+      <a class="dropdown-item" href="#">Cadastrar-me</a>
     </div>
   </div>
 </div>

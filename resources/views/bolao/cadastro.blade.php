@@ -20,7 +20,7 @@
             <h5 class="card-title">Estado:</h5>
             <select class="form-select" id="user-estado" name="user-estado" required="">
                 @foreach (json_decode($estados, true) as $key=>$value)
-                <option value="{{$value["sigla"]}}">{{$value["sigla"]}}</option>
+                    <option value="{{$value["sigla"]}}">{{$value["sigla"]}}</option>
                 @endforeach
             </select>
             <h5 class="card-title">Cidade:</h5>

@@ -11,9 +11,8 @@
         <img src="img/bg1.jpg" width="100%" height="100%">
         <div class="container">
           <div class="carousel-caption text-start">
-            <h1>Example headline.</h1>
-            <p>Some representative placeholder content for the first slide of the carousel.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+            <h1>Mais Chances que Loteria ou Mega-Sena</h1>
+            <p>Comunidade diferente de tudo que já participou, entre e confira.</p>
           </div>
         </div>
       </div>
@@ -22,19 +21,19 @@
 
         <div class="container">
           <div class="carousel-caption">
-            <h1>Another example headline.</h1>
-            <p>Some representative placeholder content for the second slide of the carousel.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+            <h1><span class="badge bg-primary">Na segurança de  sua casa.</span></h1>
+            <p><span class="badge bg-primary"><span class="text-dark">Tudo pelo Celular ou Computador. Encontre na sua cidade pessoas que queiram partricpar e aumente seus ganhos</span></span></p>
           </div>
         </div>
       </div>
+
       <div class="carousel-item">
         <img src="img/bg3.jpg" width="100%" height="100%">
         <div class="container">
           <div class="carousel-caption text-end">
-            <h1>One more for good measure.</h1>
-            <p>Some representative placeholder content for the third slide of this carousel.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+            <h1>Receba diretamente no seu PIX.</h1>
+            <p>Somos 100% digitais. Aposta, pagamento e recebimento.</p>
+            <!-- <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p> -->
           </div>
         </div>
       </div>
