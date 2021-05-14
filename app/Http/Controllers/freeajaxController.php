@@ -18,6 +18,7 @@ class freeajaxController extends Controller
     public static function cidades($sigla)
     {
         $cidades = new ajaxModel;
-        return $cidades->getcidades();
+
+        return $cidades->getcidades($sigla);
     }
 }

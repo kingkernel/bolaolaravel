@@ -13,13 +13,13 @@ class ajaxModel extends Model
     public function getEstados()
     {
         $estados = new estados;
-        $result = $estados->select(['sigla'])->get();
+        $result = $estados->select(['sigla'])->get()->toJson(JSON_UNESCAPED_UNICODE);
         return $result;
     }
-    public function getcidades()
+    public function getcidades($sigla)
     {
         $cidades = new cidades;
-        $result = $cidades->select('cidade')->where('sigla', 'ap')->get();
+        $result = $cidades->select('id', 'cidade')->where('sigla', $sigla)->get()->toJson(JSON_UNESCAPED_UNICODE);
         return $result;
     }
 }

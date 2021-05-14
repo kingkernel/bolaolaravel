@@ -16,14 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('bolao.indexoff');
 });
-Route::get('cadastro/', function () {
-    return view('bolao.cadastro');
-});
+Route::get('cadastro/', [App\Http\Controllers\usuariosController::class, 'cadastro']);
 Route::post('newuser/',[App\Http\Controllers\usuariosController::class, 'newuser']);
 
 Route::get('ajaxestados/',[App\Http\Controllers\freeajaxController::class, 'estados']);
 Route::get('ajaxcidades/{sigla}', function($sigla){
-    \App\Http\Controllers\freeajaxController::cidades($sigla);
+    return \App\Http\Controllers\freeajaxController::cidades($sigla);
 });
 
 Auth::routes();
