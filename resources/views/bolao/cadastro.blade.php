@@ -4,7 +4,7 @@
     <div class="card">
         <div class="card-header"> Cadastro de Membro da comunidade - <a href="#">Leia os termos da Comunidade</a>
         </div>
-        <form action="/newuser" method="POST">
+        <form action="/usuariosCadastro" method="POST">
             @csrf
         <div class="card-body">
             <h5 class="card-title">Nome:</h5>
@@ -12,7 +12,39 @@
             <h5 class="card-title">CPF:</h5>
             <input type="text" class="form-control" id="user-cpf" name="user-cpf" placeholder="Seu CPF" maxlength="14" required="">
             <h5 class="card-title">Nascimento:</h5>
-            <input type="text" class="form-control" id="user-nasc" name="user-nasc" placeholder="Seu Nascimento dia - mês - ano" maxlength="10" required="">
+            <div class="row">
+                <div class="col-sm-1">
+                    <select class="form-select" name="dt-day">
+                        @for($n=1; $n<=31; $n++)
+                            <option value="{{$n}}">{{$n}}</option>
+                        @endfor
+                    </select>
+                </div>
+                    <div class="col-sm-2">
+                        <select class="form-select" name="dt-month">
+                            <option value="01">Janeiro</option>
+                            <option value="02">Fevereiro</option>
+                            <option value="03">Março</option>
+                            <option value="04">Abril</option>
+                            <option value="05">Maio</option>
+                            <option value="06">Junho</option>
+                            <option value="07">Julho</option>
+                            <option value="08">Agosto</option>
+                            <option value="09">Setembro</option>
+                            <option value="10">Outubro</option>
+                            <option value="11">Novembro</option>
+                            <option value="12">Dezembro</option>
+                        </select>
+                    </div>
+                <div class="col-sm-1">
+                    <select class="form-select" name="dt-year">
+                        @for($n=1900; $n<=date('Y'); $n++)
+                        <option value="{{$n}}">{{$n}}</option>
+                    @endfor
+                    </select>
+                </div>
+                <!-- <input type="text" class="form-control" id="user-nasc" name="user-nasc" placeholder="Seu Nascimento dia - mês - ano" maxlength="10" required=""> -->
+            </div>
             <h5 class="card-title">E-mail:</h5>
             <input type="email" class="form-control" name="user-email" placeholder="Seu e-mail para as notificações" maxlength="150" required="">
             <h5 class="card-title">PIX:</h5>

@@ -1,5 +1,7 @@
 <?php
 
+/*
+
 return [
 
     /*
@@ -11,9 +13,13 @@ return [
     | messages sent by your application. Alternative mailers may be setup
     | and used as needed; however, this mailer will be used by default.
     |
-    */
 
-    'default' => env('MAIL_MAILER', 'smtp'),
+    
+
+    //'default' => env('MAIL_MAILER', 'smtp'),
+    //'default' => env('sendmail'),
+    'driver' => 'sendmail',
+    //'sendmail' => env('MAIL_SENDMAIL', '/usr/sbin/sendmail -bs')
 
     /*
     |--------------------------------------------------------------------------
@@ -31,7 +37,8 @@ return [
     | Supported: "smtp", "sendmail", "mailgun", "ses",
     |            "postmark", "log", "array"
     |
-    */
+
+    
 
     'mailers' => [
         'smtp' => [
@@ -59,12 +66,14 @@ return [
 
         'sendmail' => [
             'transport' => 'sendmail',
-            'path' => '/usr/sbin/sendmail -bs',
+            //'path' => '/usr/sbin/sendmail -bs',
+            'path' => 'C:\xampp\mailtodisk\mailtodisk.exe -t -i',
+            
         ],
 
         'log' => [
             'transport' => 'log',
-            'channel' => env('MAIL_LOG_CHANNEL'),
+            'channel' => env('MAIL_LOG_CHANNEL') 
         ],
 
         'array' => [
@@ -81,7 +90,8 @@ return [
     | the same address. Here, you may specify a name and address that is
     | used globally for all e-mails that are sent by your application.
     |
-    */
+
+    
 
     'from' => [
         'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
@@ -97,7 +107,8 @@ return [
     | theme and component paths here, allowing you to customize the design
     | of the emails. Or, you may simply stick with the Laravel defaults!
     |
-    */
+
+    
 
     'markdown' => [
         'theme' => 'default',
@@ -107,4 +118,33 @@ return [
         ],
     ],
 
+];
+*/
+return [
+'default' => env('MAIL_MAILER', 'sendmail'),
+'mailers' => [
+    'smtp' => [
+        'transport' => 'smtp',
+        'host' => env('MAIL_HOST', 'localhost'),
+        'port' => env('MAIL_PORT', 25),
+        'encryption' => env('MAIL_ENCRYPTION', 'null'),
+        //'username' => env('MAIL_USERNAME'),
+        //'password' => env('MAIL_PASSWORD'),
+    ],
+    'ses' => [
+        'transport' => 'ses',
+    ],
+    'sendmail' => [
+        'transport' => 'sendmail',
+        //'path' => '/usr/sbin/sendmail -bs',
+        'path' => 'C:\xampp\mailtodisk\mailtodisk.exe -t -i',
+    ],
+    'log' => [
+        'transport' => 'log',
+        'channel' => env('MAIL_LOG_CHANNEL'),
+    ],
+    'array' => [
+        'transport' => 'array',
+    ],
+],
 ];

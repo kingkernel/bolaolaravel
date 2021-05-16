@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('bolao.indexoff');
 });
 Route::get('cadastro/', [App\Http\Controllers\usuariosController::class, 'cadastro']);
-Route::post('newuser/',[App\Http\Controllers\usuariosController::class, 'newuser']);
+Route::post('usuariosCadastro/',[App\Http\Controllers\usuariosController::class, 'usuariosCadastro']);
 
 Route::get('ajaxestados/',[App\Http\Controllers\freeajaxController::class, 'estados']);
 Route::get('ajaxcidades/{sigla}', function($sigla){

@@ -16,12 +16,12 @@ class AddColumnsUsers extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->boolean("active")->default('0')->after('remember_token');
             $table->bigInteger('cpf')->unique()->notnull()->after('active');
-            $table->bigInteger('pix')->unique()->notnull()->after('cpf');
+            $table->string('pix')->unique()->notnull()->after('cpf');
             $table->date('nascimento')->notnull()->after('pix');
             $table->boolean('verificado')->default('0')->after('nascimento');
             $table->string('estado')->after('verificado');
             $table->string('cidade')->after('estado');
-            $table->double('credit', 15, 2)->after('cidade');
+            $table->double('credit', 15, 2)->null()->default('0')->after('cidade');
         });
     }
 
