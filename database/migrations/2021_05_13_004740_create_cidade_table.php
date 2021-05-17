@@ -17,7 +17,7 @@ class CreateCidadeTable extends Migration
             $table->id('id');
             $table->string('sigla', 2);
             $table->string('cidade', 150);
-            $table->integer('ibgecode')->null();
+            $table->integer('ibgecode')->null()->default('0');
             $table->timestamps();
         });
     }

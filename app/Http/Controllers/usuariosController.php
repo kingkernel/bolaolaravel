@@ -29,7 +29,8 @@ class usuariosController extends Controller
         $newuser = new user;
         if($newuser->insert($requestuser)){
             echo 'OK, inserido no db';
-            \Mail::to($request->input('user-email'));
+            //\Mail::to($request->input('user-email'));
+            mail($request->input('user-email'), "Inscrição no Bolão Online", 'template', 'headers');
         } else {
             echo 'ferrou, você é tapado!';
         };

@@ -121,13 +121,15 @@ return [
 ];
 */
 return [
-'default' => env('MAIL_MAILER', 'sendmail'),
+//'default' => env('MAIL_MAILER', 'smtp'),
+'default' => 'smtp',
 'mailers' => [
     'smtp' => [
         'transport' => 'smtp',
-        'host' => env('MAIL_HOST', 'localhost'),
-        'port' => env('MAIL_PORT', 25),
-        'encryption' => env('MAIL_ENCRYPTION', 'null'),
+        'host' => 'localhost',
+        'port' => 25,
+        'encryption' => 'null',
+        'path' => 'C:/xampp/mailtodisk/mailtodisk.exe -t -i',
         //'username' => env('MAIL_USERNAME'),
         //'password' => env('MAIL_PASSWORD'),
     ],
@@ -137,7 +139,7 @@ return [
     'sendmail' => [
         'transport' => 'sendmail',
         //'path' => '/usr/sbin/sendmail -bs',
-        'path' => 'C:\xampp\mailtodisk\mailtodisk.exe -t -i',
+        'path' => 'C:/xampp/mailtodisk/mailtodisk.exe -t -i',
     ],
     'log' => [
         'transport' => 'log',
