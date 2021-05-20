@@ -1,11 +1,5 @@
 /node_modules
 /public/hot
 /vendor
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-/frontangular
->>>>>>> a920274cc7e08c3791258fbea5c46ee19f19905b
-=======
-/frontangular
->>>>>>> a920274cc7e08c3791258fbea5c46ee19f19905b
+/storage/logs
+/public/mailoutput

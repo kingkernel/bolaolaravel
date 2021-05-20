@@ -23,7 +23,14 @@ Route::get('ajaxestados/',[App\Http\Controllers\freeajaxController::class, 'esta
 Route::get('ajaxcidades/{sigla}', function($sigla){
     return \App\Http\Controllers\freeajaxController::cidades($sigla);
 });
+Route::get('valida/{hash}', function($hash){
+    return \App\Http\Controllers\validationController::mailValidation($hash);
+});
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get("/test", [App\Http\Controllers\testController::class, 'index']);
