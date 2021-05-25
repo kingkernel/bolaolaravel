@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Helpers\kingkernelFunctions;
 
 class validationController extends Controller
 {
@@ -10,6 +12,28 @@ class validationController extends Controller
     {
         $user = new \App\Models\User;
         $userData = $user->where('password', $hash)->get()->toArray();
-        print_r($userData[0]);
+        return view('bolao.validauser')->with([
+            'usuario' => $userData[0],
+            'hash' => $hash]);
+    }
+    public static function activeUser($hash)
+    {
+        if(\Request::input('newPassword')==\Request::input('confirmPassword'))
+        {
+            $newPassword = kingkernelFunctions::hashPassword(\Request::input('newPassword'));
+        };
+        $user = new User;
+        if(User::where([
+            'password' => $hash,
+            'email'=>\Request::input('user')]
+            )->Update([
+                'password'=> $newPassword,
+                'active'=>1]))
+        {
+            echo "atualizado";
+            //return redirect('/');
+        } else {
+            echo "faill";
+        };
     }
 }

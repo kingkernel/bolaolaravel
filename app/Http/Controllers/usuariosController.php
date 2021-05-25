@@ -35,7 +35,7 @@ class usuariosController extends Controller
                     ->get()->toArray();
             //$link[0]->password;
 
-            \Mail::to($request->input('user-email'));
+            //\Mail::to($request->input('user-email'))->send(new \App\Mail\userCadastro());
 
             mail($request->input('user-email'), "Inscrição no Bolão Online", '<a href="http://'.$_SERVER["HTTP_HOST"].'/valida/'.$link[0]->password.'">aqui</a>', 'headers');
 

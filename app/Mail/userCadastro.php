@@ -29,6 +29,6 @@ class userCadastro extends Mailable
     public function build()
     {
         $this->from("daniel.santos@kingkernel.com.br");
-        return $this->view('bolao.index');
+        return $this->view('bolao.indexoff');
     }
 }
