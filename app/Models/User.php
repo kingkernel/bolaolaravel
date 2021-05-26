@@ -40,7 +40,8 @@ class User extends Authenticatable
         'remember_token',
         'active',
         'credit',
-        'pix'
+        'pix',
+        'cpf'
     ];
 
     /**

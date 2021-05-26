@@ -28,7 +28,8 @@ class validationController extends Controller
             'email'=>\Request::input('user')]
             )->Update([
                 'password'=> $newPassword,
-                'active'=>1]))
+                'active'=>1,
+                'email_verified_at'=>date("Y-m-d H:i:s")]))
         {
             echo "atualizado";
             //return redirect('/');
