@@ -12,22 +12,26 @@ class AuthController extends Controller
     {
         $password = kingkernelFunctions::hashPassword(\Request::input('passkey'));
         $userMail = \Request::input('usermail');
-        $query = \DB::table('users')->where([
-            'email'=>$userMail,
-            'password'=>$password,
-            'active'=> 1])->get()->count();
-        if($query ==1){
-            echo "pode logar";
-            session_start();
-            $_SESSION["permitido"] = 'sim';
+        $user = \DB::select(\DB::RAW('select count(*) as existe from users where email= :varemail and password= :varpassword and active= :varactive'),
+        [
+            'varemail' => $userMail,
+            'varpassword' => $password,
+            'varactive' => true
+        ]);
+        if($user[0]->existe == 1){
+            $_SESSION["permitido"] = true;
             $user = new User;
             $member = $user->where([
-                'email'=>$userMail,
-                'password'=>$password,
-                'active'=> 1])->get()->first()->toArray();
-            print_r($member);
+                'email'=>$userMail])->get()->toArray();
+            $_SESSION["thismember"] = $member[0];
+            return redirect('/online');
         } else {
             echo "Não pode logar";
-        }
+       }
+    }
+    public function logout()
+    {
+        session_destroy();
+        return redirect('/');
     }
 }

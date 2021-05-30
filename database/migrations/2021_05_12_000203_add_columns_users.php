@@ -22,6 +22,7 @@ class AddColumnsUsers extends Migration
             $table->string('estado')->after('verificado');
             $table->string('cidade')->after('estado');
             $table->double('credit', 15, 2)->null()->default('0')->after('cidade');
+            $table->string('member_level', 45)->default('member');
         });
     }
 

@@ -14,7 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('bolao.indexoff');
+    if(isset($_SESSION["permitido"])){
+        return redirect()->action([App\Http\Controllers\onlineController::class, 'index']);
+    }else{
+        return view('bolao.indexoff');
+    }
 });
 Route::get('cadastro/', [App\Http\Controllers\usuariosController::class, 'cadastro']);
 Route::post('usuariosCadastro/',[App\Http\Controllers\usuariosController::class, 'usuariosCadastro']);
@@ -40,3 +44,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get("/test", [App\Http\Controllers\testController::class, 'index']);
 
 Route::post("/auth", [App\Http\Controllers\AuthController::class, 'index']);
+Route::get("/auth/logout", [App\Http\Controllers\AuthController::class, 'logout']);
+
+Route::get('/online', [App\Http\Controllers\onlineController::class, 'index'])->middleware('online');

@@ -29,7 +29,7 @@ class validationController extends Controller
             )->Update([
                 'password'=> $newPassword,
                 'active'=>1,
-                'email_verified_at'=>date("Y-m-d H:i:s")]))
+                'email_verified_at' => date("Y-m-d H:i:s")]))
         {
             echo "atualizado";
             //return redirect('/');
