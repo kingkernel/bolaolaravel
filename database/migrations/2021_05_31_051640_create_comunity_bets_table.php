@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBetsTable extends Migration
+class CreateComunityBetsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,12 @@ class CreateBetsTable extends Migration
      */
     public function up()
     {
-        Schema::create('bets', function (Blueprint $table) {
+        Schema::create('comunity_bets', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('member_id')->unsigned();
             $table->foreign('lk6ik')->references('id')->on('users');
-            $table->string('bets_code')->unique();
-            $table->mediumText('description');
-            $table->double('collection_bets', 15, 2);
-            $table->datetime('creation')
-                ->default(\DB::RAW('current_timestamp()'));
-            $table->datetime('finish_bets')->nullable()
-                ->default(\DB::RAW('DATE_ADD(current_timestamp(), INTERVAL 7 DAY)'));
+            $table->string('campaing')->nullable();
+            $table->foreign('campaing')->references('id')->on('bets');
             $table->timestamps();
         });
     }
@@ -35,6 +30,6 @@ class CreateBetsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bets');
+        Schema::dropIfExists('comunity_bets');
     }
 }

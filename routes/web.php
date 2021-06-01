@@ -47,3 +47,6 @@ Route::post("/auth", [App\Http\Controllers\AuthController::class, 'index']);
 Route::get("/auth/logout", [App\Http\Controllers\AuthController::class, 'logout']);
 
 Route::get('/online', [App\Http\Controllers\onlineController::class, 'index'])->middleware('online');
+
+Route::get('/credit', [App\Http\Controllers\creditController::class, 'index'])->middleware('online');
+Route::get('/credit/add', [App\Http\Controllers\creditController::class, 'index'])->middleware('online');

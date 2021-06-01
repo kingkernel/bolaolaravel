@@ -18,7 +18,7 @@
             <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
           </a>
           <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" style="">
-            <li><a class="dropdown-item" href="#">Créditos</a></li>
+            <li><a class="dropdown-item" href="http://{{$_SERVER['HTTP_HOST']}}/credit">Créditos</a></li>
             <li><a class="dropdown-item" href="#">Convites</a></li>
             <li><a class="dropdown-item" href="#">Preferências</a></li>
             <li><hr class="dropdown-divider"></li>
