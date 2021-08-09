@@ -16,7 +16,7 @@ class CreateBetsTable extends Migration
         Schema::create('bets', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('member_id')->unsigned();
-            $table->foreign('lk6ik')->references('id')->on('users');
+            $table->foreign('member_id')->references('id')->on('users');
             $table->string('bets_code')->unique();
             $table->mediumText('description');
             $table->double('collection_bets', 15, 2);

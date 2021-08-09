@@ -16,9 +16,9 @@ class CreateComunityBetsTable extends Migration
         Schema::create('comunity_bets', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('member_id')->unsigned();
-            $table->foreign('lk6ik')->references('id')->on('users');
-            $table->string('campaing')->nullable();
-            $table->foreign('campaing')->references('id')->on('bets');
+            $table->foreign('member_id')->references('id')->on('users');
+            $table->string('bets_code')->nullable();
+            $table->foreign('bets_code')->references('bets_code')->on('bets');
             $table->timestamps();
         });
     }

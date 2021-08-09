@@ -46,7 +46,7 @@
                 <!-- <input type="text" class="form-control" id="user-nasc" name="user-nasc" placeholder="Seu Nascimento dia - mês - ano" maxlength="10" required=""> -->
             </div>
             <h5 class="card-title">E-mail:</h5>
-            <input type="email" class="form-control" name="user-email" placeholder="Seu e-mail para as notificações" maxlength="150" required="">
+            <input type="email" class="form-control" name="user-email" id="user-email" placeholder="Seu e-mail para as notificações" maxlength="150" required="">
             <h5 class="card-title">PIX:</h5>
             <input type="text" class="form-control" name="user-pix" placeholder="Seu Pix para recebimento" maxlength="150" required="">
             <h5 class="card-title">Estado:</h5>
@@ -65,9 +65,11 @@
     </form>
 </div>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
+    $("#user-cpf").mask("999.999.999-99", {reverse: true});
     $("#user-estado").change(function (){
         let estado = $("#user-estado").val();
         $("#user-cidade").load('http://{{$_SERVER["HTTP_HOST"]}}/ajaxcidades/'+estado, function (data){ 

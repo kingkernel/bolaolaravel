@@ -11,8 +11,8 @@
         <img src="img/bg1.jpg" width="100%" height="100%">
         <div class="container">
           <div class="carousel-caption text-start">
-            <h1>Mais Chances que Loteria ou Mega-Sena</h1>
-            <p>Comunidade diferente de tudo que já participou, entre e confira.</p>
+            {{-- <h1>Mais Chances que Loteria ou Mega-Sena</h1>
+            <p class="d-lg-none d-lg-block">Comunidade diferente de tudo que já participou, entre e confira.</p> --}}
           </div>
         </div>
       </div>
@@ -21,8 +21,8 @@
 
         <div class="container">
           <div class="carousel-caption">
-            <h1><span class="badge bg-primary">Na segurança de  sua casa.</span></h1>
-            <p><span class="badge bg-primary"><span class="text-dark">Tudo pelo Celular ou Computador. Encontre na sua cidade pessoas que queiram partricpar e aumente seus ganhos</span></span></p>
+            {{-- <h1><span class="badge bg-primary">Na segurança de  sua casa.</span></h1>
+            <p><span class="badge bg-primary"><span class="text-dark">Tudo pelo Celular ou Computador. Encontre na sua cidade pessoas que queiram partricpar e aumente seus ganhos</span></span></p> --}}
           </div>
         </div>
       </div>
@@ -31,9 +31,9 @@
         <img src="img/bg3.jpg" width="100%" height="100%">
         <div class="container">
           <div class="carousel-caption text-end">
-            <h1>Receba diretamente no seu PIX.</h1>
+            {{-- <h1>Receba diretamente no seu PIX.</h1>
             <p>Somos 100% digitais. Aposta, pagamento e recebimento.</p>
-            <!-- <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p> -->
+            <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p> --}}
           </div>
         </div>
       </div>

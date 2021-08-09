@@ -31,11 +31,9 @@ Route::get('ajaxcidades/{sigla}', function($sigla){
 Route::get('valida/{hash}', function($hash){
     return \App\Http\Controllers\validationController::mailValidation($hash);
 });
-Route::post('valida/{hash}', function($hash){
+Route::post('/valida/{hash}', function($hash){
     return \App\Http\Controllers\validationController::activeUser($hash);
 });
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
@@ -50,3 +48,5 @@ Route::get('/online', [App\Http\Controllers\onlineController::class, 'index'])->
 
 Route::get('/credit', [App\Http\Controllers\creditController::class, 'index'])->middleware('online');
 Route::get('/credit/add', [App\Http\Controllers\creditController::class, 'index'])->middleware('online');
+
+Route::get('/bets' , [App\Http\Controllers\betsController::class, 'index']);

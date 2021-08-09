@@ -42,6 +42,7 @@ class AddColumnsUsers extends Migration
             $table->dropColumn('estado');
             $table->dropColumn('cidade');
             $table->dropColumn('credit');
+            $table->dropColumn('member_level');
         });
     }
 }
